@@ -1,0 +1,6 @@
+version : "3.3"
+services :
+  web :
+     image : devops22003/todo:latest
+     ports :
+         - "8000:8000"
