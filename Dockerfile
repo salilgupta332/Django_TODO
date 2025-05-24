@@ -1,13 +1,27 @@
-FROM python:3
+FROM python:3.11-slim
 
+# Set working directory in the container
 WORKDIR /data
 
-RUN pip install django==3.2
+# Install system dependencies (including distutils)
+RUN apt-get update && apt-get install -y \
+    python3-distutils \
+    build-essential \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
 
+# Install Django and other Python packages
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy project files into the container
 COPY . .
 
-RUN python manage.py migrate
+# Run database migrations (optional: better to run at runtime, not during build)
+# RUN python manage.py migrate
 
+# Expose port
 EXPOSE 8000
 
-CMD ["python","manage.py","runserver","0.0.0.0:8000"]
+# Start the Django server
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
