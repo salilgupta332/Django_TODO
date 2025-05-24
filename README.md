@@ -46,3 +46,6 @@ Trigger: GitHub Webhook (automatically runs on push)
 
 📸 Screenshots 
 
+The diagram below illustrates the flow of **Continuous Integration** and **Continuous Delivery** using **GitHub**, **Jenkins**, **Docker**, and **Docker Hub**:
+
+![CI/CD Pipeline Overview](./overview.png)
