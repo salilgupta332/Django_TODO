@@ -51,7 +51,7 @@ The diagram below illustrates the flow of **Continuous Integration** and **Conti
 ![CI/CD Pipeline Overview](./overview.png)
 
 👨‍💻 Author
-Your Name – DevOps Enthusiast
+Salil Gupta – DevOps Enthusiast
 
 🔗 GitHub:https://github.com/salilgupta332/
 
